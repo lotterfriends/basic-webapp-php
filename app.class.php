@@ -1,7 +1,9 @@
 <?php
 
 require "viewController.class.php";
-require "databaseController.class.php";
+require "actionController.class.php";
+require "rb.php";
+require 'inputController.class.php';
 
 class App {
 
@@ -12,12 +14,11 @@ class App {
 
 	function start() {
 		$viewController = new ViewController();
+		$actioController = new ActionController();
 	}
 
 	function openDatabaseConnection() {
-		$db = DatabaseController::getInstance();
-		$db->openConnection();
-		// print_r($db->query('SELECT * from places'));
+		R::setup( 'mysql:host=localhost;dbname=mydatabase', 'root', 'root');
 	}
 	
 }

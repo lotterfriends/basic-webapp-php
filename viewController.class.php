@@ -1,6 +1,6 @@
 <?php 
 
-require 'inputController.class.php';
+require "lib/Smarty.class.php";
 
 class ViewController {
 	
@@ -16,8 +16,13 @@ class ViewController {
 		if (empty($view)) {
 			$view = self::$DEFAULT_VIEW;
 		}
-		echo $view;
-		// load view
+		$smarty = new Smarty;
+		if ($smarty->templateExists($view . '.tpl')) {
+			$smarty->display($view . '.tpl');
+			$smarty->assign('images','templates/'); 
+		} else {
+			$smarty->display('404.tpl');
+		}
 	}
 
 

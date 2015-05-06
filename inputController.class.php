@@ -26,4 +26,13 @@ class InputController {
         return trim(htmlspecialchars(strip_tags($input), ENT_QUOTES, "UTF-8"));
     }
 
+    function cleanObject($post_var) {
+        $input = $_POST[$post_var];
+        $inputReturn = array();
+        foreach ($input as $key => $value) {
+            $inputReturn[$this->cleanInput($key)] = $this->cleanInput($value);
+        }
+        return $inputReturn;
+    }
+
 }
