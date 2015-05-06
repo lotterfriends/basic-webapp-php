@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="?page=home"><i class="glyphicon glyphicon-cutlery"></i> test app</a>
+          <a class="navbar-brand" href="?page=home"><i class="glyphicon glyphicon-leaf"></i> test app</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
